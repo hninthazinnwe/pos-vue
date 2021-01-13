@@ -1,0 +1,57 @@
+.btn {
+    background: #000;
+    width: 100px;
+    height: 20px;
+}
+.my-input {
+    width: 300px;
+    height: 1em;
+    margin: 3px 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-style: none;
+    background: rgba(var(--vs-gray-2), 1);
+    color: #000;
+    font-size: 14px;
+}
+.my-textarea {
+    width: 300px;
+    height: 100px;
+    margin: 3px 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(var(--vs-gray-2), 1);
+    background: rgba(var(--vs-gray-2), 1);
+    color: #000;
+    font-size: 14px; 
+}
+h3 {
+    text-align: center;
+}
+.label-text {
+font-weight: 550;
+font-size: 1.1em;
+}
+.left-div {
+    padding: 5px 10px;
+}
+.right-div {
+padding: 5px 0px;
+border-left: 2px solid #ccc;
+height: 600px;
+}
+.no {
+width: 50px;
+}
+.code {
+width: 150px;
+}
+.name {
+width: 200px;
+}
+.email {
+width: 200px;
+}
+.action {
+width: 150px;
+}

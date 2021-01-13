@@ -1,28 +1,40 @@
+
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="center examplex">
+      <side-bar />
+    </div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import { Component, Vue, Class } from 'vue-property-decorator'
+// import { State, namespace } from 'vuex-class'
+import store from './store'
+import sidebar from './components/sidebar.vue'
 
 export default {
-  name: 'App',
+  data:() => ({
+    active: 'home',
+    store: store,
+    menuItems: [
+      { icon: "home", title: "Home", link: "/" },
+      { icon: "pos", title: "POS", link: "/pos" },
+      // { icon: "e-commerce", title: "E-Commerce", link: "/addNewItem" },
+    ]
+  }),
   components: {
-    HelloWorld
+  'side-bar': sidebar,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.content {
+  margin: 50px 0px;
 }
 </style>
+
+        

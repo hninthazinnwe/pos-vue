@@ -1,23 +1,30 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App.vue'
-import VueRouter from 'vue-router';
-import VueAxios from 'vue-axios';
-import axios from 'axios';
-import {routes} from './routes';
+import { sync } from 'vuex-router-sync'
+import router from './router/index.js'
 import Vuesax from 'vuesax';
-import vuesax from 'vuesax/dist/vuesax.css'; //   Vuesax styles
+import 'vuesax/dist/vuesax.css'; //   Vuesax styles
+import './css/style.css'
+import store from './store/index.js'
+import 'boxicons/dist/boxicons'
 
-Vue.config.productionTip = false
-Vue.use(VueRouter);
-Vue.use(VueAxios, axios);
-Vue.use(Vuesax, {vuesax});
- 
-const router = new VueRouter({
-    mode: 'history',
-    routes: routes
+Vue.use(Vuex) 
+Vue.use(Vuesax, {
+  primary: '#037367',
+  secondary: '#00281f',
+  accent: '#4a7eb3',
+  error: '#FF5252',
+  info: '#2196F3',
+  success: '#4CAF50',
+  warning: '#FFC107'
 });
 
+sync(store, router)
+ 
 new Vue({
-  router: router,
+  el: '#app',
+  store,
+  router,
   render: h => h(App),
-}).$mount('#app')
+})
